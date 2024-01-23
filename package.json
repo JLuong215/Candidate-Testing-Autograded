@@ -9,6 +9,8 @@
    "author": "",
    "license": "ISC",
    "dependencies": {
+      "json": "^11.0.0",
+      "package.json": "^2.0.1",
       "readline-sync": "^1.4.10"
    },
    "devDependencies": {
