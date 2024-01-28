@@ -7,19 +7,19 @@ const input = require('readline-sync');
 let candidateName = "";
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "Who was the first American woman in space?";
+let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 
 
 //TODO: Variables for Part 2
-let questions = ["Who was the first American woman in space?",
-  "True or false: 5 kilometer == 5000 meters?",
-  "(5 + 3)/2 * 10 = ?",
-  "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?",
-  "What is the minimum crew size for the ISS?"];
-let correctAnswers = ["Sally Ride", "true", 40, "Trajectory", 3];
-let candidateAnswers = "";
+let questions = ["Who was the first American woman in space? ",
+  "True or false: 5 kilometer == 5000 meters? ",
+  "(5 + 3)/2 * 10 = ? ",
+  "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
+  "What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride" , "true" , "40" , "Trajectory" , "3" ];
+let candidateAnswers = [""];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -32,28 +32,42 @@ function askQuestion() {
 
 
   for (i = 0; i < questions.length; i++) {
-    candidateAnswer[i] = input.question[i]
+    candidateAnswer[i]= input.question[i]
+    candidateAnswers[i] = input.question[i]
     console.log(`Candidate answer: ${candidateAnswer[i]}`);
     console.log(`Correct Answer: ${correctAnswer[i]}`)
   }
 }
 
 
-function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let candidateAnswer = input.question(question);
+  
   if (candidateAnswer == correctAnswer) {
-    return true;
+    console.log("you got it");
   } else {
-    return false;
+    console.log("Try again");
   }
 
+for (i = 0; i < questions.length; i++) {
+  if (candidateAnswers[i] == correctAnswers[i]) {
+    console.log("you got it");
+  } else {
+    console.log("Try again");
+  }
+}
 
+//TODO 3.2 use this variable to calculate the candidates score.
+function gradeQuiz(candidateAnswers) {
+  let grade = '';
+  let numOfCorrectAnswer = '';
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  for (i = 0; i < candidateAnswers.length; i++) {
+    if (candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
+      numOfCorrectAnswer++
+    }
+  }
+  grade = ((numOfCorrectAnswer)/(correctAnswers.length))*100;
   return grade;
 }
 
