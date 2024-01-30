@@ -38,7 +38,7 @@ function askQuestion() {
 
   for (i = 0; i < questions.length; i++) {
     while (candidateAnswers[i] == input.question[i]) {
-      return `Candidate answer: ${candidateAnswer[i]} \n ${correctAnswers[i]}`;
+      return `Candidate answer: ${candidateAnswer[i]} \n Correct Answer: ${correctAnswers[i]}`;
     } 
   }
 }
