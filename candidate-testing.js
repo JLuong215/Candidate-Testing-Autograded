@@ -29,11 +29,17 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
 
+  // for (i = 0; i < questions.length; i++) {
+  //   candidateAnswer[i]= input.question[i]
+  //   candidateAnswers[i] = input.question[i]
+  //   console.log(`Candidate answer: ${candidateAnswer[i]}`);
+  //   console.log(`Correct Answer: ${correctAnswer[i]}`)
+  // }
+
   for (i = 0; i < questions.length; i++) {
-    candidateAnswer[i]= input.question[i]
-    candidateAnswers[i] = input.question[i]
-    console.log(`Candidate answer: ${candidateAnswer[i]}`);
-    console.log(`Correct Answer: ${correctAnswer[i]}`)
+    while (candidateAnswers[i] == input.question[i]) {
+      return `Candidate answer: ${candidateAnswer[i]} \n ${correctAnswers[i]}`;
+    } 
   }
 }
 
