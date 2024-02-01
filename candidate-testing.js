@@ -51,6 +51,8 @@ function askQuestion() {
     console.log("Try again");
   }
 
+  if (candidateAnswer == correctAnswer) ? "you got it" : "Try again";
+
 for (i = 0; i < questions.length; i++) {
   if (candidateAnswers[i] == correctAnswers[i]) {
     console.log("you got it");
